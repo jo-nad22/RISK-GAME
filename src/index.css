@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Lalezar&display=swap');
+
+:root {
+  --font-heading: 'Lalezar', system-ui, cursive;
+  --font-body: 'Cairo', system-ui, sans-serif;
+
+  --color-primary: #FF4757;
+  --color-secondary: #2ED573;
+  --color-accent: #FFA502;
+  --color-dark: #2F3542;
+  --color-light: #FFFFFF;
+
+  --shadow-comic: 4px 4px 0px #000000;
+  --border-comic: 3px solid #000000;
+  --font-comic: 'Lalezar', cursive;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #2F3542;
+  color: var(--color-dark);
+  min-height: 100vh;
+  overflow: hidden;
+  direction: rtl;
+}
+
+/* Global Halftone Overlay */
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#000 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: -1;
+}
+
+button {
+  font-family: var(--font-heading);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: transform 0.1s;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.game-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Utility Classes */
+.text-heading {
+  font-family: var(--font-heading);
+}
+
+.text-shadow {
+  text-shadow: var(--shadow-text);
+}
+
+.card-shadow {
+  box-shadow: var(--shadow-card);
+}
+
+.hidden {
+  display: none;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

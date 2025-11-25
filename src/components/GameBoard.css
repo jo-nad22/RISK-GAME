@@ -1,0 +1,210 @@
+.board-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    gap: 20px;
+    background-color: #5f27cd;
+    background-image:
+        linear-gradient(45deg, #341f97 25%, transparent 25%, transparent 75%, #341f97 75%, #341f97),
+        linear-gradient(45deg, #341f97 25%, transparent 25%, transparent 75%, #341f97 75%, #341f97);
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+    overflow: hidden;
+}
+
+.scoreboard {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+}
+
+.score-card {
+    background: #fff;
+    padding: 15px;
+    text-align: center;
+    border: 4px solid #000;
+    box-shadow: 8px 8px 0 #000;
+    transition: transform 0.3s;
+    position: relative;
+    transform: skewX(-5deg);
+}
+
+.score-card::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    z-index: -1;
+    border: 4px solid #000;
+    opacity: 0.5;
+}
+
+.score-card.active-turn {
+    transform: scale(1.15) skewX(-5deg) rotate(-2deg);
+    background: #ff9ff3;
+    z-index: 10;
+    box-shadow: 12px 12px 0 #000;
+}
+
+.team-name {
+    font-family: 'Lalezar', system-ui, cursive;
+    font-size: 1.8rem;
+    color: #000;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    border-bottom: 2px dashed #000;
+}
+
+.team-score {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #FF4757;
+    -webkit-text-stroke: 2px #000;
+    text-shadow: 3px 3px 0 #fff;
+}
+
+.main-board {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; Remove this to allow top alignment */
+    padding-top: 20px;
+}
+
+.turn-indicator {
+    font-family: 'Lalezar', system-ui, cursive;
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 40px;
+    text-shadow: 3px 3px 0 #000;
+    background: #341f97;
+    /* Dark Blue */
+    padding: 10px 40px;
+    transform: skewX(-10deg);
+    border: 4px solid #000;
+    box-shadow: 6px 6px 0 #000;
+    border-radius: 10px;
+}
+
+.categories-grid {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    /* Allow wrapping if screen is small */
+}
+
+.category-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    position: relative;
+    /* For absolute positioning of questions if needed */
+}
+
+.category-card {
+    width: 140px;
+    height: 180px;
+    background: #fff;
+    border-radius: 10px;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #000;
+    border: 3px solid #000;
+    box-shadow: 6px 6px 0 #000;
+    transition: all 0.2s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Card Back Pattern */
+    background-image: repeating-linear-gradient(45deg,
+            #fff,
+            #fff 10px,
+            #f0f0f0 10px,
+            #f0f0f0 20px);
+}
+
+.category-card:active {
+    transform: translate(6px, 6px);
+    box-shadow: 0 0 0 #000;
+}
+
+.category-card.active {
+    background: #FFA502;
+    box-shadow: 6px 6px 0 #d4c04d;
+    transform: translateY(-10px);
+    z-index: 20;
+}
+
+.questions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    /* Position below the category card */
+    left: 0;
+    margin-top: 20px;
+    z-index: 15;
+}
+
+.question-card {
+    width: 140px;
+    /* Match category width */
+    height: 60px;
+    background: #fff;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    border: 2px solid #000;
+    box-shadow: 3px 3px 0 #000;
+    transition: all 0.2s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.question-card:hover:not(:disabled) {
+    transform: scale(1.05) rotate(1deg);
+    background: #ffeaa7;
+}
+
+.question-card.answered {
+    background: #dfe6e9;
+    color: #b2bec3;
+    border-color: #636e72;
+    box-shadow: none;
+    cursor: default;
+}
+
+/* Animation for list */
+.slide-up {
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

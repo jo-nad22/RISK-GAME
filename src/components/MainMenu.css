@@ -1,0 +1,69 @@
+.main-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #ff9f43;
+    background-image:
+        repeating-conic-gradient(from 0deg,
+            #ff9f43 0deg 20deg,
+            #ee5253 20deg 40deg);
+    position: relative;
+    z-index: 10;
+}
+
+.menu-title {
+    font-size: 12rem;
+    color: #FF4757;
+    text-shadow:
+        5px 5px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        1px 1px 0 #000;
+    margin-bottom: 50px;
+    transform: rotate(-5deg) skewX(-10deg);
+    letter-spacing: -5px;
+}
+
+.menu-options {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.menu-btn {
+    font-size: 3rem;
+    padding: 20px 80px;
+    border-radius: 15px;
+    border: 4px solid #000;
+    color: #000;
+    font-weight: bold;
+    transition: all 0.2s;
+    box-shadow: 8px 8px 0 #000;
+    text-transform: uppercase;
+}
+
+.start-btn {
+    background: #2ED573;
+    transform: rotate(2deg);
+}
+
+.start-btn:hover {
+    background: #7bed9f;
+    transform: scale(1.1) rotate(0deg);
+    box-shadow: 4px 4px 0 #000;
+}
+
+.exit-btn {
+    background: #FFA502;
+    transform: rotate(-2deg);
+}
+
+.exit-btn:hover {
+    background: #ffc048;
+    transform: scale(1.1) rotate(0deg);
+    box-shadow: 4px 4px 0 #000;
+}

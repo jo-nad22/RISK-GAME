@@ -1,0 +1,155 @@
+.selection-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #0abde3;
+    background-image:
+        radial-gradient(#48dbfb 20%, transparent 20%),
+        radial-gradient(#48dbfb 20%, transparent 20%);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    color: #000;
+}
+
+.selection-title {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 0 #000;
+    background: #341f97;
+    /* Dark Blue */
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 10px;
+    transform: rotate(-2deg);
+    border: 3px solid #000;
+    box-shadow: 5px 5px 0 #000;
+}
+
+.wheel-wrapper {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin-bottom: 30px;
+}
+
+.wheel-pointer {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4rem;
+    color: #FF4757;
+    z-index: 10;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.wheel {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 5px solid #000;
+    position: relative;
+    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.wheel-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.segment-text {
+    font-family: 'Lalezar', system-ui, cursive;
+    font-size: 1.5rem;
+    color: #000;
+    background: #fff;
+    padding: 2px 8px;
+    border-radius: 5px;
+    border: 2px solid #000;
+    white-space: nowrap;
+}
+
+.comic-btn {
+    font-size: 2rem;
+    padding: 15px 50px;
+    background: #FFA502;
+    color: #000;
+    border: 3px solid #000;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0 #000;
+    transition: all 0.1s;
+    font-family: 'Lalezar', system-ui, cursive;
+}
+
+.comic-btn:active {
+    transform: translate(5px, 5px);
+    box-shadow: 0 0 0 #000;
+}
+
+.winner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    backdrop-filter: blur(5px);
+}
+
+.winner-name {
+    font-size: 6rem;
+    background: #fff;
+    padding: 20px 60px;
+    border: 5px solid #000;
+    box-shadow: 10px 10px 0 #000;
+    transform: rotate(-5deg);
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ordered-list {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.ordered-item {
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Lalezar', system-ui, cursive;
+    font-size: 1.5rem;
+    color: #000;
+    /* Black text */
+    text-shadow: none;
+    background: rgba(255, 255, 255, 0.9);
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0 #000;
+}
+
+.rank {
+    background: #fff;
+    color: #000;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border: 2px solid #000;
+    text-shadow: none;
+}

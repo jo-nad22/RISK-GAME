@@ -1,0 +1,12 @@
+IMPORTANT:
+The game code is complete, but you need to install the tools to run it.
+
+1. Open a terminal in this folder.
+2. Run this command:
+   npm install
+
+3. Then run this command to start the game:
+   npm run dev
+
+The errors you see in the files are because step #1 hasn't been done yet.
+ؤي
